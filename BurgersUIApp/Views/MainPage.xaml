@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             x:Class="BurgersUIApp.Views.MainPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <!-- Main structure-->
+            <Grid Margin="20,40,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 1.1 Main Wall-->
+                <Image Grid.Column="0" Grid.Row="0" Source="HamburgerMenu" HorizontalOptions="Start"/>
+                <Image Grid.Column="2" Grid.Row="0" Source="Add" HorizontalOptions="End" Margin="0,0,10,0"/>  
+                <Label Grid.Column="0" Grid.Row="1" Text="Delivering to" TextColor="Silver" Margin="{OnPlatform Android='0,20,0,0', iOS='0,40,0,0'}"/>
+                <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Text="Current location" FontSize="20" FontAttributes="Bold"/>
+                <Image Grid.Column="1" Grid.Row="2" HeightRequest="20" Source="Arrow" HorizontalOptions="Start"/>
+                <SearchBar Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Placeholder="Search food" BackgroundColor="Transparent" HorizontalOptions="Fill"/>
+                <Image Grid.Column="2" Grid.Row="3" Source="Order" Margin="0,0,10,0" HorizontalOptions="End" />
+
+                <!--1.2 Menu -->
+                <CollectionView ItemsSource="{Binding menu}"
+                                   Margin="0,20"
+                                   HeightRequest="125"
+                                   VerticalOptions="FillAndExpand"
+                                   HorizontalScrollBarVisibility="Never" 
+                                   ItemsLayout="HorizontalList" 
+                                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+                                 <CollectionView.ItemTemplate>
+                                       <DataTemplate>
+                                           <StackLayout Padding="0,0,15,0">
+                                               <Frame HeightRequest="50" HasShadow="False" BackgroundColor="#feeee8" CornerRadius="10">
+                                                   <Image Source="{Binding Picture}"/>
+                                               </Frame>
+                                               <Label Text="{Binding Name}" HorizontalTextAlignment="Center"/>
+                                           </StackLayout>
+                                       </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                 </CollectionView>
+
+                <!--1.3 Popular menu-->
+                <Label Grid.Row="5" Grid.Column="0" Text="Popular" FontSize="25" FontAttributes="Bold"/>
+                <CollectionView ItemsSource="{Binding popularFood}"
+                                   Margin="0,20,10,0" 
+                                   VerticalOptions="Start"
+                                   VerticalScrollBarVisibility="Never" 
+                                   Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3">
+                                 <CollectionView.ItemTemplate>
+                                       <DataTemplate> 
+                                           <StackLayout Margin="0,15">
+                                                <Grid>
+                                                       <Grid.RowDefinitions>
+                                                           <RowDefinition Height="Auto"/>
+                                                           <RowDefinition Height="Auto"/>
+                                                           <RowDefinition Height="Auto"/> 
+                                                       </Grid.RowDefinitions>
+                                                       <PanCake:PancakeView Grid.Row="0" CornerRadius="20" Margin="0,0,10,0">
+                                                            <Image Source="{Binding Picture}" HeightRequest="220" Aspect="Fill"/>
+                                                       </PanCake:PancakeView>
+                                                       <Frame Grid.Row="1" Margin="20,-80,20,70" BackgroundColor="White" CornerRadius="15"  HorizontalOptions="End" >
+                                                         <Label Text="{Binding IntervalTime}" FontSize="10" FontAttributes="Bold" TextColor="Black" HeightRequest="10" />
+                                                       </Frame>
+                                                       <Label Grid.Row="1" Text="{Binding Name}" FontSize="22" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                                                       <Image Grid.Row="2" Source="Star" HorizontalOptions="Start" WidthRequest="20"/>
+                                                       <Label Grid.Row="2" Margin="30,0,0,0" FontSize="15" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString> 
+                                                                    <Span Text="{Binding Rating}" FontAttributes="Bold" />
+                                                                    <Span Text="{Binding Description}" TextColor="#a4a7b6"  />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                   </Grid> 
+                                           </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                 </CollectionView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

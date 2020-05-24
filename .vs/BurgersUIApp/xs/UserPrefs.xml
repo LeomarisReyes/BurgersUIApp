@@ -1,0 +1,46 @@
+﻿<Properties StartupConfiguration="{EFAE6451-4803-4F8B-B448-AA3BE0648E43}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BurgersUIApp/App.xaml.cs">
+    <Files>
+      <File FileName="BurgersUIApp/Views/MenuDetailPage.xaml" Line="55" Column="80" />
+      <File FileName="BurgersUIApp/Views/MenuDetailPage.xaml.cs" />
+      <File FileName="BurgersUIApp/MainPage.xaml.cs" />
+      <File FileName="BurgersUIApp/App.xaml.cs" Line="13" Column="42" />
+      <File FileName="BurgersUIApp/Models/Burgers.cs" />
+      <File FileName="BurgersUIApp/ViewModels/MenuDetailsViewModel.cs" />
+      <File FileName="BurgersUIApp/Views/MainPage.xaml" />
+      <File FileName="BurgersUIApp/Views/MainPage.xaml.cs" />
+      <File FileName="BurgersUIApp/Models/Menu.cs" />
+      <File FileName="BurgersUIApp/ViewModels/MenuViewModel.cs" />
+      <File FileName="BurgersUIApp/Models/PopularFood.cs" />
+      <File FileName="BurgersUIApp.Android/Resources/layout/Tabbar.xml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BurgersUIApp" expanded="True" selected="True">
+            <Node name="BurgersUIApp" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="MainPage.xaml" expanded="True" />
+                <Node name="MenuDetailPage.xaml" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="BurgersUIApp.iOS" expanded="True">
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BurgersUIApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.19246DB7-ED17-4769-94AD-22BF5FA8FA24" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.BurgersUIApp.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.pixel_2" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
